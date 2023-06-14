@@ -9,9 +9,16 @@ export const counterSlice = createSlice({
     increment(state) {
       state.counter+=1
     },
+    decrement(state){
+     state.counter-=1
+    },
+    incrementBy(state, value){
+      const {cont} = value.payload;
+      state.counter+=cont;
+    }
   },
 })
 
-export const { increment } = counterSlice.actions
+export const { increment, decrement,incrementBy } = counterSlice.actions
 
 //increment son conocidos como actioncreator -- trae un payload
